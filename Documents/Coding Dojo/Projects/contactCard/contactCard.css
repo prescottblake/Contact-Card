@@ -1,0 +1,21 @@
+*{
+	/*outline: 1px dotted red;*/
+}
+label{
+	display: block;
+}
+.contactCard{
+	height: 175px;
+	width:250px;
+	background-color: lightgrey;
+	vertical-align: middle;
+	text-align: center;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+	.contactCard h1{
+		margin-top: 25px;
+	}
+.description{
+	display: none;
+}

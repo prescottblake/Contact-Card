@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contact Card</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="contactCard.css">
+	<script src="jquery-3.0.0.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('form').submit(function() {
+				$('.contactCardArea').append('<div class="contactCard"> <h1>'+$('#firstName').val()+ ' ' +$('#lastName').val()+ '</h1><p class="descClick">Click for description</p><p class="description">'+$('#description').val()+'<p>');
+				return false;
+			});
+			$(document).on('click', '.contactCard', function() {
+				$(this).children('.description').toggle();
+				$(this).children('.descClick').toggle();
+				$(this).children('h1').toggle();
+
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<h1>Contact Card Creator</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-6">
+				<form>
+					<label>First Name</label>
+					<input id="firstName" type="text" name="first_name">
+					<label>Last Name</label>
+					<input id="lastName" type="text" name="last_name">
+					<label>Description</label>
+					<textarea id="description" rows="5" cols="31"></textarea>
+					<input type="submit" name="" value="Create Card">
+				</form>
+			</div>
+			<div class="col-xs-6 contactCardArea">
+				<div class="contactCard">
+					<h1>Name</h1>
+					<p class="descClick">Click for description!</p>
+					<p class="description">Description example</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
